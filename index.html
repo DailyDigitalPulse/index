@@ -599,11 +599,21 @@
 
                             </h3>
 
-                            <div class="meta">
+```javascript id="qjlwm3"
+<div class="meta">
 
-                                AI Generated • Daily Pulse
+    ${new Date(post.sha ? Date.now() : Date.now())
+    .toLocaleDateString('en-US', {
 
-                            </div>
+        year:'numeric',
+        month:'long',
+        day:'numeric'
+
+    })}
+
+</div>
+```
+
 
                             <a href="${post.path}"
                             class="read-btn">
