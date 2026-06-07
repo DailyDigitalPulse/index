@@ -1,50 +1,69 @@
-```html id="zqz7tz"
+```html id="7a8kz1"
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <!-- GOOGLE VERIFICATION -->
-    <meta name="google-site-verification" content="1-cwj0g4aFbDdjPml2GjcO3WdSVRT5RTx5z4pRKuo04" />
+
+    <meta name="google-site-verification"
+    content="1-cwj0g4aFbDdjPml2GjcO3WdSVRT5RTx5z4pRKuo04" />
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Daily Digital Pulse - Gaming & Tech News</title>
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>
+        Daily Digital Pulse - Gaming & Tech News
+    </title>
+
+    <!-- FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- STYLE -->
 
     <style>
 
         :root{
+
             --bg:#050505;
             --card:#101010;
             --green:#76B900;
-            --greenGlow:#9dff00;
             --white:#ffffff;
             --muted:#9ca3af;
             --border:rgba(255,255,255,0.08);
         }
 
         *{
+
             margin:0;
             padding:0;
             box-sizing:border-box;
+
             font-family:'Inter',sans-serif;
         }
 
         body{
+
             background:var(--bg);
             color:var(--white);
+
             overflow-x:hidden;
         }
 
         /* NAVBAR */
 
         nav{
+
             position:fixed;
+
             top:0;
             width:100%;
-            z-index:999;
+
+            z-index:1000;
 
             padding:22px 8%;
 
@@ -53,40 +72,52 @@
             align-items:center;
 
             background:rgba(0,0,0,0.7);
+
             backdrop-filter:blur(12px);
 
             border-bottom:1px solid var(--border);
         }
 
         .logo{
-            font-size:28px;
-            font-weight:900;
-            letter-spacing:1px;
+
             color:var(--green);
+
+            font-size:28px;
+
+            font-weight:900;
+
             text-transform:uppercase;
         }
 
         nav ul{
+
             display:flex;
-            gap:30px;
+            gap:25px;
+
             list-style:none;
         }
 
         nav ul li a{
-            text-decoration:none;
+
             color:white;
+
+            text-decoration:none;
+
             font-weight:500;
+
             transition:0.3s;
         }
 
         nav ul li a:hover{
+
             color:var(--green);
         }
 
         /* HERO */
 
         .hero{
-            min-height:100vh;
+
+            min-height:85vh;
 
             display:flex;
             align-items:center;
@@ -94,10 +125,11 @@
             padding:140px 8% 100px;
 
             background:
+
             linear-gradient(
             to right,
             rgba(0,0,0,0.9),
-            rgba(0,0,0,0.4)
+            rgba(0,0,0,0.5)
             ),
 
             url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop');
@@ -107,59 +139,71 @@
         }
 
         .hero-content{
+
             max-width:750px;
         }
 
         .tag{
+
             display:inline-block;
 
             padding:8px 18px;
 
-            background:rgba(118,185,0,0.15);
-
-            border:1px solid rgba(118,185,0,0.4);
-
             border-radius:40px;
+
+            background:rgba(118,185,0,0.12);
+
+            border:1px solid rgba(118,185,0,0.3);
 
             color:var(--green);
 
-            margin-bottom:25px;
+            font-size:13px;
 
-            font-size:14px;
-            font-weight:600;
+            font-weight:700;
+
+            margin-bottom:25px;
         }
 
         .hero h1{
-            font-size:78px;
+
+            font-size:76px;
+
             line-height:1.05;
+
             margin-bottom:25px;
+
             font-weight:900;
         }
 
         .hero h1 span{
+
             color:var(--green);
         }
 
         .hero p{
+
             color:var(--muted);
+
             font-size:20px;
+
             line-height:1.8;
-            max-width:650px;
+
             margin-bottom:40px;
         }
 
         .hero-btn{
+
             display:inline-block;
 
-            padding:16px 42px;
+            padding:16px 40px;
 
             background:var(--green);
 
             color:black;
 
-            border-radius:8px;
-
             text-decoration:none;
+
+            border-radius:8px;
 
             font-weight:700;
 
@@ -171,28 +215,34 @@
             transform:translateY(-5px);
 
             box-shadow:
-            0 0 35px rgba(118,185,0,0.5);
+            0 0 30px rgba(118,185,0,0.4);
         }
 
         /* SECTION */
 
         .section{
+
             padding:100px 8%;
         }
 
         .section-title{
+
             font-size:48px;
+
             margin-bottom:50px;
+
             font-weight:800;
         }
 
         .section-title span{
+
             color:var(--green);
         }
 
         /* GRID */
 
         .news-grid{
+
             display:grid;
 
             grid-template-columns:
@@ -205,11 +255,7 @@
 
         .news-card{
 
-            background:linear-gradient(
-            180deg,
-            rgba(255,255,255,0.02),
-            rgba(255,255,255,0.01)
-            );
+            background:var(--card);
 
             border:1px solid var(--border);
 
@@ -218,32 +264,33 @@
             overflow:hidden;
 
             transition:0.4s;
-
-            backdrop-filter:blur(8px);
         }
 
         .news-card:hover{
 
-            transform:
-            translateY(-10px);
+            transform:translateY(-10px);
 
-            border-color:rgba(118,185,0,0.4);
+            border-color:rgba(118,185,0,0.3);
 
             box-shadow:
-            0 0 30px rgba(118,185,0,0.15);
+            0 0 30px rgba(118,185,0,0.12);
         }
 
         .news-image{
+
             width:100%;
             height:220px;
+
             object-fit:cover;
         }
 
         .news-content{
+
             padding:25px;
         }
 
         .category{
+
             display:inline-block;
 
             margin-bottom:18px;
@@ -254,29 +301,31 @@
 
             font-weight:700;
 
-            letter-spacing:1px;
-
             text-transform:uppercase;
         }
 
         .news-card h3{
-            font-size:25px;
+
+            font-size:24px;
+
             line-height:1.5;
+
             margin-bottom:18px;
         }
 
         .news-card a{
+
             color:white;
+
             text-decoration:none;
         }
 
-        .news-card a:hover{
-            color:var(--green);
-        }
-
         .meta{
+
             color:var(--muted);
+
             font-size:14px;
+
             margin-bottom:25px;
         }
 
@@ -286,31 +335,25 @@
 
             padding:12px 24px;
 
-            border:1px solid rgba(118,185,0,0.3);
-
             border-radius:8px;
-
-            color:var(--green);
-
-            text-decoration:none;
-
-            font-weight:600;
-
-            transition:0.3s;
-        }
-
-        .read-btn:hover{
 
             background:var(--green);
 
-            color:black;
+            color:black !important;
+
+            font-weight:700;
+
+            text-decoration:none;
         }
 
         /* LOADING */
 
         .loading{
+
             text-align:center;
+
             color:var(--muted);
+
             font-size:20px;
         }
 
@@ -325,38 +368,39 @@
             border-top:1px solid var(--border);
 
             background:#080808;
+
+            text-align:center;
         }
 
         footer h2{
-            font-size:34px;
+
             color:var(--green);
+
             margin-bottom:20px;
         }
 
         footer p{
+
             color:var(--muted);
-            max-width:700px;
-            line-height:1.8;
         }
 
-        /* RESPONSIVE */
+        /* MOBILE */
 
         @media(max-width:768px){
 
             nav ul{
+
                 display:none;
             }
 
             .hero h1{
-                font-size:52px;
+
+                font-size:48px;
             }
 
             .hero p{
-                font-size:17px;
-            }
 
-            .section-title{
-                font-size:38px;
+                font-size:17px;
             }
 
         }
@@ -372,17 +416,25 @@
     <nav>
 
         <div class="logo">
-            DAILY DIGITAL PULSE
+            Daily Digital Pulse
         </div>
 
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Gaming</a></li>
-            <li><a href="#">Tech</a></li>
-            <li><a href="#">AI</a></li>
-<li><a href="/index/about.html">About</a></li>
-<li><a href="/index/privacy.html">Privacy</a></li>
-<li><a href="/index/contact.html">Contact</a></li>
+
+            <li><a href="/index/">Home</a></li>
+
+            <li><a href="/index/about.html">
+                About
+            </a></li>
+
+            <li><a href="/index/privacy.html">
+                Privacy
+            </a></li>
+
+            <li><a href="/index/contact.html">
+                Contact
+            </a></li>
+
         </ul>
 
     </nav>
@@ -403,20 +455,23 @@
             </h1>
 
             <p>
-                Discover Viral Gaming Stories, Console Leaks,
-                AI Technology, PlayStation Updates, Xbox News,
-                PC Gaming And The Biggest Trends Across Digital Media.
+                Discover Viral Gaming Stories,
+                Console Leaks, AI Technology,
+                PlayStation Updates And Tech Trends.
             </p>
 
-            <a href="#news-grid" class="hero-btn">
+            <a href="#news-grid"
+            class="hero-btn">
+
                 Explore News
+
             </a>
 
         </div>
 
     </section>
 
-    <!-- NEWS SECTION -->
+    <!-- POSTS -->
 
     <section class="section">
 
@@ -424,11 +479,15 @@
             Latest <span>Pulse</span>
         </h2>
 
-        <div id="loading" class="loading">
-            Loading Latest Gaming Updates...
+        <div id="loading"
+        class="loading">
+
+            Loading Latest News...
+
         </div>
 
-        <div id="news-grid" class="news-grid"></div>
+        <div id="news-grid"
+        class="news-grid"></div>
 
     </section>
 
@@ -436,12 +495,12 @@
 
     <footer>
 
-        <h2>Daily Digital Pulse</h2>
+        <h2>
+            Daily Digital Pulse
+        </h2>
 
         <p>
-            A Next Generation Gaming & Technology Media Platform
-            Delivering Automated News, Viral Gaming Stories,
-            AI Content And Entertainment Updates Across The Web.
+            AI Powered Gaming & Technology Media Platform
         </p>
 
     </footer>
@@ -463,7 +522,8 @@
                 `https://api.github.com/repos/${owner}/${repo}/contents?ref=${branch}`
                 );
 
-                const files = await response.json();
+                const files =
+                await response.json();
 
                 const grid =
                 document.getElementById('news-grid');
@@ -471,17 +531,30 @@
                 document.getElementById('loading')
                 .style.display = 'none';
 
-               const excludedPages = [
-'index.html',
-'about.html',
-'privacy.html',
-'contact.html'
-];
+                const excludedPages = [
 
-const posts = files.filter(file =>
-file.name.endsWith('.html') &&
-!excludedPages.includes(file.name)
-);
+                    'index.html',
+                    'about.html',
+                    'privacy.html',
+                    'contact.html'
+
+                ];
+
+                const posts =
+                files.filter(file => {
+
+                    const name =
+                    file.name.toLowerCase();
+
+                    return (
+
+                        name.endsWith('.html')
+                        &&
+                        !excludedPages.includes(name)
+
+                    );
+
+                });
 
                 if(posts.length === 0){
 
@@ -491,80 +564,61 @@ file.name.endsWith('.html') &&
                     return;
                 }
 
-```javascript
-for (const post of posts.reverse()) {
+                posts.reverse().forEach(post => {
 
-    let cleanTitle =
-    post.name
-    .replace('.html','')
-    .replace(/-/g,' ');
+                    let cleanTitle =
 
-    // OPEN ARTICLE FILE
+                    post.name
+                    .replace('.html','')
+                    .replace(/-/g,' ');
 
-    const article =
-    await fetch(post.download_url);
+                    const card =
+                    document.createElement('div');
 
-    const html =
-    await article.text();
+                    card.className =
+                    'news-card';
 
-    // GET ARTICLE IMAGE
+                    card.innerHTML = `
 
-    const imageMatch =
-    html.match(
-    /<meta property="og:image" content="(.*?)"/
-    );
+                        <img
+                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
+                        class="news-image"
+                        alt="Gaming News">
 
-    // USE ARTICLE IMAGE
+                        <div class="news-content">
 
-    const featuredImage =
-    imageMatch
-    ?
-    imageMatch[1]
-    :
-    'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop';
+                            <div class="category">
+                                Gaming & Tech
+                            </div>
 
-    const card =
-    document.createElement('div');
+                            <h3>
 
-    card.className = 'news-card';
+                                <a href="${post.path}">
+                                    ${cleanTitle}
+                                </a>
 
-    card.innerHTML = `
+                            </h3>
 
-        <img
-        src="${featuredImage}"
-        class="news-image"
-        alt="Gaming News">
+                            <div class="meta">
 
-        <div class="news-content">
+                                AI Generated • Daily Pulse
 
-            <div class="category">
-                Gaming & Tech
-            </div>
+                            </div>
 
-            <h3>
-                <a href="${post.path}">
-                    ${cleanTitle}
-                </a>
-            </h3>
+                            <a href="${post.path}"
+                            class="read-btn">
 
-            <div class="meta">
-                AI Generated • Daily Pulse
-            </div>
+                                Read Story
 
-            <a href="${post.path}"
-            class="read-btn">
+                            </a>
 
-                Read Story
+                        </div>
 
-            </a>
+                    `;
 
-        </div>
+                    grid.appendChild(card);
 
-    `;
-
-    grid.appendChild(card);
-
-});
+                });
 
             }
 
@@ -584,5 +638,6 @@ for (const post of posts.reverse()) {
     </script>
 
 </body>
+
 </html>
 ```
