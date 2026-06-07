@@ -565,31 +565,8 @@
                 }
 
              ```javascript id="gxjvta"
-for (const post of posts.reverse()) {
-
-    // GET LAST UPDATED DATE
-
-    const commitResponse =
-    await fetch(
-    `https://api.github.com/repos/${owner}/${repo}/commits?path=${post.path}`
-    );
-
-    const commits =
-    await commitResponse.json();
-
-    const articleDate =
-    commits[0]?.commit?.author?.date
-    ?
-    new Date(commits[0].commit.author.date)
-    .toLocaleDateString('en-US', {
-
-        year:'numeric',
-        month:'long',
-        day:'numeric'
-
-    })
-    :
-    'Latest Update';
+```javascript
+posts.reverse().forEach(post => {
 
     let cleanTitle =
 
@@ -626,7 +603,7 @@ for (const post of posts.reverse()) {
 
             <div class="meta">
 
-                ${articleDate}
+                Daily Digital Pulse
 
             </div>
 
@@ -643,9 +620,9 @@ for (const post of posts.reverse()) {
 
     grid.appendChild(card);
 
-}
+});
 ```
-);
+
 
             }
 
