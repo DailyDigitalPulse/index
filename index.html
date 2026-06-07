@@ -564,71 +564,88 @@
                     return;
                 }
 
-                posts.reverse().forEach(post => {
+             ```javascript id="gxjvta"
+for (const post of posts.reverse()) {
 
-                    let cleanTitle =
+    // GET LAST UPDATED DATE
 
-                    post.name
-                    .replace('.html','')
-                    .replace(/-/g,' ');
+    const commitResponse =
+    await fetch(
+    `https://api.github.com/repos/${owner}/${repo}/commits?path=${post.path}`
+    );
 
-                    const card =
-                    document.createElement('div');
+    const commits =
+    await commitResponse.json();
 
-                    card.className =
-                    'news-card';
-
-                    card.innerHTML = `
-
-                        <img
-                        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
-                        class="news-image"
-                        alt="Gaming News">
-
-                        <div class="news-content">
-
-                            <div class="category">
-                                Gaming & Tech
-                            </div>
-
-                            <h3>
-
-                                <a href="${post.path}">
-                                    ${cleanTitle}
-                                </a>
-
-                            </h3>
-
-```javascript id="qjlwm3"
-<div class="meta">
-
-    ${new Date(post.sha ? Date.now() : Date.now())
+    const articleDate =
+    commits[0]?.commit?.author?.date
+    ?
+    new Date(commits[0].commit.author.date)
     .toLocaleDateString('en-US', {
 
         year:'numeric',
         month:'long',
         day:'numeric'
 
-    })}
+    })
+    :
+    'Latest Update';
 
-</div>
+    let cleanTitle =
+
+    post.name
+    .replace('.html','')
+    .replace(/-/g,' ');
+
+    const card =
+    document.createElement('div');
+
+    card.className =
+    'news-card';
+
+    card.innerHTML = `
+
+        <img
+        src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop"
+        class="news-image"
+        alt="Gaming News">
+
+        <div class="news-content">
+
+            <div class="category">
+                Gaming & Tech
+            </div>
+
+            <h3>
+
+                <a href="${post.path}">
+                    ${cleanTitle}
+                </a>
+
+            </h3>
+
+            <div class="meta">
+
+                ${articleDate}
+
+            </div>
+
+            <a href="${post.path}"
+            class="read-btn">
+
+                Read Story
+
+            </a>
+
+        </div>
+
+    `;
+
+    grid.appendChild(card);
+
+}
 ```
-
-
-                            <a href="${post.path}"
-                            class="read-btn">
-
-                                Read Story
-
-                            </a>
-
-                        </div>
-
-                    `;
-
-                    grid.appendChild(card);
-
-                });
+);
 
             }
 
