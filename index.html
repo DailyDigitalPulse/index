@@ -491,64 +491,80 @@ file.name.endsWith('.html') &&
                     return;
                 }
 
-                posts.reverse().forEach(post => {
+```javascript
+for (const post of posts.reverse()) {
 
-                    let cleanTitle =
-                    post.name
-                    .replace('.html','')
-                    .replace(/-/g,' ');
+    let cleanTitle =
+    post.name
+    .replace('.html','')
+    .replace(/-/g,' ');
 
-                    if(cleanTitle.length > 75){
+    // OPEN ARTICLE FILE
 
-                        cleanTitle =
-                        cleanTitle.substring(0,75) + '...';
-                    }
+    const article =
+    await fetch(post.download_url);
 
-                    const card =
-                    document.createElement('div');
+    const html =
+    await article.text();
 
-                    card.className = 'news-card';
+    // GET ARTICLE IMAGE
 
-                    const randomImage =
-                    `https://picsum.photos/600/400?random=${Math.floor(Math.random()*1000)}`;
+    const imageMatch =
+    html.match(
+    /<meta property="og:image" content="(.*?)"/
+    );
 
-                    card.innerHTML = `
+    // USE ARTICLE IMAGE
 
-                        <img
-                        src="${randomImage}"
-                        class="news-image"
-                        alt="Gaming News">
+    const featuredImage =
+    imageMatch
+    ?
+    imageMatch[1]
+    :
+    'https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop';
 
-                        <div class="news-content">
+    const card =
+    document.createElement('div');
 
-                            <div class="category">
-                                Gaming & Tech
-                            </div>
+    card.className = 'news-card';
 
-                            <h3>
-                                <a href="${post.path}">
-                                    ${cleanTitle}
-                                </a>
-                            </h3>
+    card.innerHTML = `
 
-                            <div class="meta">
-                                AI Generated • Daily Pulse
-                            </div>
+        <img
+        src="${featuredImage}"
+        class="news-image"
+        alt="Gaming News">
 
-                            <a href="${post.path}"
-                            class="read-btn">
+        <div class="news-content">
 
-                                Read Story
+            <div class="category">
+                Gaming & Tech
+            </div>
 
-                            </a>
+            <h3>
+                <a href="${post.path}">
+                    ${cleanTitle}
+                </a>
+            </h3>
 
-                        </div>
+            <div class="meta">
+                AI Generated • Daily Pulse
+            </div>
 
-                    `;
+            <a href="${post.path}"
+            class="read-btn">
 
-                    grid.appendChild(card);
+                Read Story
 
-                });
+            </a>
+
+        </div>
+
+    `;
+
+    grid.appendChild(card);
+
+});
 
             }
 
